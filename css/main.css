@@ -1,0 +1,7 @@
+div#card {
+	border: 1px solid black;
+  margin: 125px auto 0;
+  width: 75%;
+  border-radius: 3px;
+}
+
