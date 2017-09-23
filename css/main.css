@@ -5,3 +5,16 @@ div#card {
   border-radius: 3px;
 }
 
+
+.f {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.location {
+	flex-basis: 100%;
+}
+
+.weather-details > img, .weather-details > p {
+	width: 50%;
+}
