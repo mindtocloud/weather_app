@@ -3,6 +3,11 @@ div#card {
   margin: 125px auto 0;
   width: 75%;
   border-radius: 3px;
+  padding: 1.2em;
+}
+
+.temp {
+	margin: 0;
 }
 
 
@@ -11,10 +16,26 @@ div#card {
 	flex-wrap: wrap;
 }
 
-.location {
+.location, .weather-details, .days {
 	flex-basis: 100%;
 }
 
-.weather-details > img, .weather-details > p {
+.weather-details > img, .weather-details > p, .weather-details .panel {
 	width: 50%;
+}
+
+.weather-details .panel:first-of-type {
+	align-items: flex-start;
+}
+
+.temp {
+	font-size: 2em;
+}
+
+ul.days-list li {
+	flex-basis: calc( 100% / 7 );
+}
+
+ul.days-list {
+	list-style-type: none;
 }
