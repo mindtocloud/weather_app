@@ -9,7 +9,7 @@ PageUpdate.prototype.updateElements = function() {
 	this.setCountryElement();
 	this.setDayElement();
 	this.setDescriptionElement();
-	this.imageUrlBuilder();
+	// this.setImageElement();
 };
 
 
@@ -56,11 +56,11 @@ PageUpdate.prototype.setDescriptionElement = function() {
 
 // Image Element
 PageUpdate.prototype.getImageElement = function() {
-	return $('.icon')
+	return $('.main-icon')
 };
 
 PageUpdate.prototype.setImageElement = function() {
-	this.getImageElement().attr('src')
+	this.getImageElement().attr('src', this.imageUrlBuilder() )
 };
 
 PageUpdate.prototype.imageSource = function() {
@@ -93,7 +93,7 @@ PageUpdate.prototype.isDayOrNight = function() {
 };
 
 PageUpdate.prototype.imageUrlBuilder = function() {
-	this.'http://openweathermap.org/img/w/' + this.imageSource + this.isDayOrNight() + '.png';
+	return 'http://openweathermap.org/img/w/' + this.imageSource() + this.isDayOrNight() + '.png';
 };	
 
 // Temperature Elements
