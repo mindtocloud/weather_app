@@ -38,4 +38,23 @@ ul.days-list li {
 
 ul.days-list {
 	list-style-type: none;
+	padding: 0;
+}
+
+ul.days-list li > img {
+		margin: 0 auto;
+    display: block;
+}
+
+ul.days-list li > p {
+	text-align: center;
+}
+
+.temp-high, .temp-low {
+	display: inline-block;
+	text-align: center;
+}
+
+.temp-high {
+	margin-left: 35px;
 }
