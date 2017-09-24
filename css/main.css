@@ -33,7 +33,7 @@ div#card {
 }
 
 ul.days-list li {
-	flex-basis: calc( 100% / 7 );
+	flex-basis: 20%;
 }
 
 ul.days-list {
@@ -56,5 +56,5 @@ ul.days-list li > p {
 }
 
 .temp-high {
-	margin-left: 35px;
+	margin-left: 120px;
 }
