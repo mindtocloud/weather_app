@@ -8,6 +8,7 @@ PageUpdate.prototype.updateElements = function() {
 	this.setCityElement();
 	this.setCountryElement();
 	this.setDayElement();
+	this.setDescriptionElement();
 };
 
 
@@ -43,6 +44,24 @@ PageUpdate.prototype.setDayElement = function() {
 	this.getDayElement().text( DAYS_OF_THE_WEEK[new Date().getDay()] )
 };
 
+// Description Elements
+PageUpdate.prototype.getDescriptionElement = function() {
+	return $('p.description')
+};
+
+PageUpdate.prototype.setDescriptionElement = function() {
+	this.getDescriptionElement().text( this.data.weather.description )
+};
+
+// Image Element
+PageUpdate.prototype.getImageElement = function() {
+	return $('.icon')
+};
+
+PageUpdate.prototype.setImageElement = function() {
+	this.getImageElement().attr('src')
+};
+
 // Temperature Elements
 PageUpdate.prototype.getTempElement = function() {
 	return $('p.temp')
@@ -56,6 +75,3 @@ PageUpdate.prototype.setTempElement = function() {
 // Date
 
 var DAYS_OF_THE_WEEK = ['Sunday','Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-
-var date = new Date();
-
