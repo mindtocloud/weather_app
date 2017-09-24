@@ -9,6 +9,7 @@ PageUpdate.prototype.updateElements = function() {
 	this.setCountryElement();
 	this.setDayElement();
 	this.setDescriptionElement();
+	this.imageUrlBuilder();
 };
 
 
@@ -62,6 +63,39 @@ PageUpdate.prototype.setImageElement = function() {
 	this.getImageElement().attr('src')
 };
 
+PageUpdate.prototype.imageSource = function() {
+	description = this.data.weather.description 
+
+	imageIconLabels = {
+	 	'clear sky': '01',
+	 	'few clouds': '02',
+	 	'scattered clouds': '03',
+	 	'broken clouds': '04',
+	 	'shower rain': '05',
+	 	'rain': '06',
+	 	'thunderstorm': '07',
+	 	'snow': '08',
+	 	'mist': '09'
+
+ }
+
+ return imageIconLabels[description]
+};
+
+PageUpdate.prototype.isDayOrNight = function() {
+
+	if(isDay()){
+		return 'd'
+	} else {
+		return 'n'
+	}
+
+};
+
+PageUpdate.prototype.imageUrlBuilder = function() {
+	this.'http://openweathermap.org/img/w/' + this.imageSource + this.isDayOrNight() + '.png';
+};	
+
 // Temperature Elements
 PageUpdate.prototype.getTempElement = function() {
 	return $('p.temp')
@@ -72,6 +106,39 @@ PageUpdate.prototype.setTempElement = function() {
 };
 
 
+
 // Date
 
 var DAYS_OF_THE_WEEK = ['Sunday','Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+
+function isDay() {
+
+	now = new Date();
+
+	if (now.getHours() > 6 && now.getHours() <= 18){
+		return true;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
