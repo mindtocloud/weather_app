@@ -9,7 +9,7 @@ PageUpdate.prototype.updateElements = function() {
 	this.setCountryElement();
 	this.setDayElement();
 	this.setDescriptionElement();
-	// this.setImageElement();
+	this.setImageElement();
 };
 
 
@@ -64,7 +64,7 @@ PageUpdate.prototype.setImageElement = function() {
 };
 
 PageUpdate.prototype.imageSource = function() {
-	description = this.data.weather.description 
+	description = this.data.weather[0].main; 
 
 	imageIconLabels = {
 	 	'clear sky': '01',
